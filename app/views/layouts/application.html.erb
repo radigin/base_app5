@@ -11,8 +11,8 @@
   <body>
 
     <div id="nav">
-      <% if current_user %>
-        <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <% if @current_user_object %>
+        <%= link_to "Edit Profile: #{@current_user_login} как #{@current_role_user.try(:role).try(:info)}", edit_user_path(@current_user_object.id) %>
         <%= link_to "Logout", :logout, method: :post %>
       <% else %>
         <%= link_to "Register", new_user_path %> |
