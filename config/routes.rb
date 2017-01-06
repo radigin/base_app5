@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'welcome/insufficient_privileges', as: :ip
 
   resources :roles
-  root :to => 'users#index'
   resources :user_sessions
   resources :users do
     member do
